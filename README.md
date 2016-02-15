@@ -16,11 +16,9 @@ Focus on writing your function, not on argument parsing. `getopts` does the hard
 
 A definition beginning with `<letter>` defines a short option, while a definition beginning with `<word>` defines a long option. A short option will match `-<letter>`, while a long option will match `--<word>`.
 
-If a `<letter>` or `<word>` is followed by a `:`, the option is expected to have an argument, which may be supplied separately or next to the option without spaces in the same string.
+If a `<letter>` or `<word>` is followed by a `:`, the option is expected to have an argument, which may be supplied separately or next to the option without spaces in the same string. To indicate optional arguments, use an additional `:` character after a `:` at the end of the definition.
 
-To indicate optional arguments, use an additional `:` character after a `:` at the end of the definition. Optional arguments can be supplied in the same string as the option and without spaces, e.g, `-<letter>value` will correctly assign `value` as the argument to the the option `<letter>`, but `-<letter>` value, will parse `value` as the next argument in `<ARGV>`.
-
-To specify optional arguments for a long option in the same string, use a `=` character after the option: `--<word>=value`.
+Both required and optional values for arguments can be supplied either in the same string as the option, or in the string following the option. For short options, the value can be appended without spaces, e.g, `-<letter>value`. For long options, use a `=` character after the option, e.g, `--<word>=value`.
 
 
 ## Description
