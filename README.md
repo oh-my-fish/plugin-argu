@@ -56,8 +56,11 @@ fish `getopts` follows the specifications described in the [Utility Syntax Guide
 ```
 
 
-## Links
+## Links and inspiration
 - [UNIX Utility Conventions][utilconv]
+- http://man7.org/linux/man-pages/man1/getopt.1.html
+- https://github.com/fishery/getopts
+- zparseopts: http://linux.die.net/man/1/zshmodules
 
 
 ## License
