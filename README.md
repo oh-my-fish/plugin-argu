@@ -56,18 +56,24 @@ fish `getopts` follows the specifications described in the [Utility Syntax Guide
 ```
 
 
-## Links and inspiration
+## Relation to other getopts
+This getops plugin has been written from scratch with a new algorithm, to improve performance and provide more consistent parsing. It aims to replace [plugin-getopts], a separate plugin. Inspiration is drawn from this plugin, but the usage and implementation are **not** related nor compatible. See the `README` on the above plugin to compare the changes if you are migrating to this plugin from [plugin-getopts].
+
+
+## Inspiration and related links
 - [UNIX Utility Conventions][utilconv]
 - http://man7.org/linux/man-pages/man1/getopt.1.html
-- https://github.com/fishery/getopts
 - zparseopts: http://linux.die.net/man/1/zshmodules
+- Credit goes to https://github.com/fishery/getopts for the `while read` idea for reading options.
 
 
 ## License
-[MIT][mit] © [Oh My Fish!][omf]
+[MIT][mit] © [Stephen Coakley][author]. See the [AUTHORS](AUTHORS) file for a generated list of all contributors, and the [LICENSE](LICENSE) file for license details.
 
 
+[author]:         https://github.com/coderstephen
 [mit]:            http://opensource.org/licenses/MIT
 [omf]:            https://www.github.com/oh-my-fish
+[plugin-getopts]: https://github.com/oh-my-fish/plugin-getopts
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
 [utilconv]:       http://pubs.opengroup.org/onlinepubs/7908799/xbd/utilconv.html
