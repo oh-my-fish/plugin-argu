@@ -1,4 +1,4 @@
-function getopts -d "Parse command options"
+function argu -d "Parse command options"
   # Iterate over each input argument to parse the option configuration.
   for arg in $argv
     set -e argv[1]
@@ -37,7 +37,6 @@ function getopts -d "Parse command options"
           or contains -- $parts[1]:: $options
           and echo -E $parts
           or echo "Unknown option `$parts[1]'." >&2
-        set -e argv[1]
 
       # Match a short or long single option.
       case '--*' '-?'
@@ -63,7 +62,6 @@ function getopts -d "Parse command options"
         else
           echo "Unknown option `$argv[1]'." >&2
         end
-        set -e argv[1]
 
       # Match a short option with a value, or a series of flags.
       case '-??*'
@@ -93,12 +91,19 @@ function getopts -d "Parse command options"
             and echo -E $flag $value
             or echo "Unknown option `$flag'." >&2
         end
-        set -e argv[1]
+
+      # Match an unassoicated value.
+      case '*'
+        echo "_ $argv[1]"
     end
+
+    set -e argv[1]
   end
 
   # Print out the remeaining values that do not belong to any option.
   for arg in $argv
     echo "_ $arg"
   end
+
+  return 0
 end
